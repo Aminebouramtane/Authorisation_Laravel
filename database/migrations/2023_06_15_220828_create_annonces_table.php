@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("titre",200);
             $table->text("description");
+            $table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users");
             $table->enum("type",["Terain"," Appartemant","Maison","Appartement"]);
             $table->string("ville",200);
             $table->integer("superficie");
